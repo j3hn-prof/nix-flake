@@ -21,10 +21,10 @@
   let
     hosts =[
       {
-        # "Laptop" (Mutilated Ideapad 5)
+        # "Laptop" (Shitty Work One)
         host = "nibble";
         system = "x86_64-linux";
-        stateVersion = "25.05";
+        stateVersion = "25.11";
       }
       {
         # Desktop PC (RX 6700xt)
