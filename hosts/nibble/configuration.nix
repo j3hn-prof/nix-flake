@@ -12,13 +12,15 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.nixos-hardware.nixosModules.microsoft-surface-common
     "${modules}" # Custom application module collection
+    "${modules}/hardware/sb2.nix" # Module for Surface Book 2 (nixos-hardware)
   ];
 
   # desktops.gnome.enable = true;
-  desktops.niri.enable = true;
-  desktops.niri.darkmode = true;
+  desktops.niri = {
+    enable = true;
+    darkmode = true;
+  };
 
   shells.fish.enable = true;
 

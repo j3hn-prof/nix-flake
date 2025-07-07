@@ -16,7 +16,10 @@
   ];
 
   # desktops.gnome.enable = true;
-  desktops.niri.enable = true;
+  desktops.niri = {
+    enable = true;
+    darkmode = true;
+  };
 
   shells.fish.enable = true;
 

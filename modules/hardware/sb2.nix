@@ -2,12 +2,14 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 let
   sb2 = "hardware.microsoft-surface.surface-book-2";
 in
 {
+  imports = [ inputs.nixos-hardware.nixosModules.microsoft-surface-common ];
   options.hardware.microsoft-surface.surface-book-2 = lib.mkEnableOption
     "Enable configuration for Surface Book 2";
 
