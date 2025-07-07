@@ -12,21 +12,23 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.microsoft-surface-common
     "${modules}" # Custom application module collection
   ];
 
   # desktops.gnome.enable = true;
   desktops.niri.enable = true;
+  desktops.niri.darkmode = true;
 
   shells.fish.enable = true;
 
   # social.discord.enable = true;
-
-  # gaming.minecraft.enable = true;
   
   widgets.waybar.enable = true;
 
   terminals.ghostty.enable = true;
+
+  hardware.microsoft-surface.surface-book-2 = true;
 
   boot.loader = {
     systemd-boot.enable = true;
@@ -37,6 +39,9 @@
     hostName = host;
     networkmanager.enable = true;
   };
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   time.timeZone = "America/New_York";
 
@@ -67,7 +72,7 @@
   users.users.${user} = {
     isNormalUser = true;
     description = "John Rossi";
-    extraGroups = [ "networkmanager" "wheel" ]; # Network and sudo privileges
+    extraGroups = [ "networkmanager" "wheel" "surface-control" ]; # Network and sudo privileges
     ignoreShellProgramCheck = true;
   };
 
@@ -81,6 +86,8 @@
 
   # List of packages installed system-wide
   environment.systemPackages = with pkgs; [
+    libcamera
+
     neovim
     btop
     git

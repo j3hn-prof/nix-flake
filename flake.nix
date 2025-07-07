@@ -15,6 +15,8 @@
     # Input reference to the upstream flake for `ulauncher` (GTK 3 applicaiton launcher)
     ulauncher.url = "github:j3hn-prof/Ulauncher";
     ulauncher.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
   outputs = { self, nixpkgs, home-manager, ...}@inputs:

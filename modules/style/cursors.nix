@@ -5,9 +5,9 @@
   user,
   ...
 }: {
-  options.core.cursors.enable = lib.mkEnableOption "Enable home-manager to control cursor decorations and scaling.";
+  options.style.cursors.enable = lib.mkEnableOption "Enable home-manager to control cursor decorations and scaling.";
 
-  config = lib.mkIf config.core.cursors.enable {
+  config = lib.mkIf config.style.cursors.enable {
     home-manager.users.${user} = {
       home.pointerCursor = {
         enable = true;

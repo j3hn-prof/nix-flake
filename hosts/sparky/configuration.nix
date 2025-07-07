@@ -23,6 +23,7 @@
   # social.discord.enable = true;
 
   gaming.minecraft.enable = true;
+  gaming.steam.enable = true;
   
   widgets.waybar.enable = true;
 

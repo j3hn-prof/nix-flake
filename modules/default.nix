@@ -27,7 +27,8 @@ in {
     ./terminals
     ./launchers
     ./widgets
-    ./core
+    ./hardware
+    ./style
   ];
 }
 
