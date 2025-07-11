@@ -25,8 +25,6 @@
   shells.fish.enable = true;
 
   # social.discord.enable = true;
-  
-  widgets.waybar.enable = true;
 
   terminals.ghostty.enable = true;
   editor.helix.enable = true;

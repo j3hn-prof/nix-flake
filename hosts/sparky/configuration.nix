@@ -27,9 +27,7 @@
 
   gaming.minecraft.enable = true;
   gaming.steam.enable = true;
-  
-  widgets.waybar.enable = true;
-
+    
   terminals.ghostty.enable = true;
 
   boot.loader = {
