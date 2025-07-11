@@ -26,6 +26,7 @@ in {
     ./browsers
     ./terminals
     ./launchers
+    ./editors
     ./widgets
     # ./hardware
     ./style

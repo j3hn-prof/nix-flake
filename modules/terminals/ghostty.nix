@@ -8,7 +8,18 @@
 
   config = lib.mkIf config.terminals.ghostty.enable {
     home-manager.users.${user} = {
-      programs.ghostty.enable = true;
+      programs.ghostty = {
+        enable = true;
+      	settings = {
+          font-size = 13;
+          window-padding-color= "extend";
+          theme = "catppuccin-frappe";
+          window-decoration = "false";
+          window-padding-y = 0;
+          window-padding-x = 2;
+          window-padding-balance = true;
+       	};
+      };
     };
   };
 }

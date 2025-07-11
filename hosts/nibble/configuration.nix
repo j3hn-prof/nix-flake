@@ -29,6 +29,7 @@
   widgets.waybar.enable = true;
 
   terminals.ghostty.enable = true;
+  editor.helix.enable = true;
 
   hardware.microsoft-surface.surface-book-2 = true;
 
@@ -108,10 +109,6 @@
     cantarell-fonts
     inter
   ];
-
-  environment.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   # Set the initial system state version (required for upgrades)
   system.stateVersion = stateVersion;
