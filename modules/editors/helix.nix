@@ -16,9 +16,7 @@
   	      theme = "catppuccin_frappe";
       	};
         extraPackages = with pkgs; [
-          # Java utils
           jdt-language-server
-          google-java-format
         ];
       };
     };
