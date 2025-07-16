@@ -21,6 +21,10 @@
         enable = true;
         interactiveShellInit = ''
           set fish_greeting # Disable greeting
+          set --universal pure_enable_single_line_prompt true # Smaller prompt
+          set --universal pure_enable_nixdevshell true # Indication of nix shell
+          set --universal pure_symbol_prompt "\n❯" # Add newline before prompt
+          set --universal pure_symbol_nixdevshell_prefix "❄️ " # Adds space after nix develop icon
         '';
         plugins = [
           # Enable a plugin (here grc for colorized command output) from nixpkgs
