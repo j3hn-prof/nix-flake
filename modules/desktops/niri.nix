@@ -49,6 +49,7 @@ in
 
       home.packages = with pkgs; [
         papers
+        gnome-secrets
       ];
     };
   };

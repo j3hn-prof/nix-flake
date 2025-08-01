@@ -19,6 +19,10 @@
           # Java utils
           jdt-language-server
           google-java-format
+          # Nix LSP
+          nixd
+          # QML LSP
+          qt6.qtdeclarative
         ];
       };
     };
