@@ -24,6 +24,7 @@
 
   shells.fish.enable = true;
 
+  gaming.minecraft.enable = true;
   # social.discord.enable = true;
 
   terminals.ghostty.enable = true;
@@ -88,7 +89,6 @@
   # List of packages installed system-wide
   environment.systemPackages = with pkgs; [
     libcamera
-
     neovim
     btop
     git

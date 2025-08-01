@@ -19,10 +19,6 @@
           zulu
         ];
       })
-      graalvm-ce
-      zulu8
-      zulu17
-      zulu
     ];
     networking.firewall.allowedTCPPorts = [ 25565 ];
     networking.firewall.allowedUDPPorts = [ 25565 ];
