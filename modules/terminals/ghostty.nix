@@ -13,7 +13,7 @@
       	settings = {
           font-size = 13;
           window-padding-color= "extend";
-          theme = "catppuccin-frappe";
+          theme = "Monokai Pro Spectrum";
           window-decoration = "false";
           window-padding-y = 0;
           window-padding-x = 2;

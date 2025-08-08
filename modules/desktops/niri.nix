@@ -19,7 +19,7 @@ in
   options.desktops.niri.enable = mkEnableOption "Enable the `niri` window manager.";
   options.desktops.niri.darkmode = mkEnableOption "Enable darkmode for this desktop";
 
-  config = lib.mkIf config.desktops.niri.enable {
+  config = mkIf config.desktops.niri.enable {
     nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
     launchers.ulauncher.enable = true;

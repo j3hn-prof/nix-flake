@@ -13,7 +13,7 @@
         enable = true;
         defaultEditor = true;
         settings = {
-  	      theme = "catppuccin_frappe";
+  	      theme = "monokai_pro_spectrum";
       	};
         extraPackages = with pkgs; [
           # Java utils
