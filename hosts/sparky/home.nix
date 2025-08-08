@@ -18,9 +18,5 @@
   home.file = {
   };
 
-  home.sessionVariables = { # BROKEN !!!
-    EDITOR = "nvim";
-  };
-
   programs.home-manager.enable = true;
 }

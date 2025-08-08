@@ -29,6 +29,7 @@
   gaming.steam.enable = true;
     
   terminals.ghostty.enable = true;
+  editor.helix.enable = true;
 
   boot.loader = {
     systemd-boot.enable = true;
