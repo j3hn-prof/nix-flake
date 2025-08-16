@@ -16,6 +16,9 @@
     ulauncher.url = "github:j3hn-prof/Ulauncher";
     ulauncher.inputs.nixpkgs.follows = "nixpkgs";
 
+    quickshell.url = "github:quickshell-mirror/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
+  
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 

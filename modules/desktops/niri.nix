@@ -5,6 +5,7 @@
   user,
   dotfiles,
   inputs,
+  system,
   ...
 }:
 let
@@ -50,6 +51,7 @@ in
       home.packages = with pkgs; [
         papers
         gnome-secrets
+        inputs.quickshell.packages.${system}.default
       ];
     };
   };

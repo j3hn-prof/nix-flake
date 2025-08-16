@@ -44,6 +44,8 @@
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   time.timeZone = "America/New_York";
 
