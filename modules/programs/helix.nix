@@ -18,9 +18,11 @@
       name = "hx";
       paths = [
         (pkgs.writeScriptBin "wrapper" ''
+          #!${pkgs.bash}/bin/bash
           ${pkgs.helix}/bin/hx -c ${self.lib.getNixtowConfig "helix"} "$@"
         '')
         pkgs.helix
+        pkgs.bash
 
         # Language Servers and Formaters
         pkgs.nil
