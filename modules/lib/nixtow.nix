@@ -26,6 +26,6 @@
   };
 
   flake.lib = {
-    getNixtowConfig = key: ''$(if [ -e /etc/nixtow/config ]; then val=$(awk -F= '$1 == "${key}" {print $2}' /etc/nixtow/config); if [ -e $val ]; then echo $val; else echo "${self}/dots/${key}/config.toml"; fi else "${self}/dots/${key}/config.toml"; fi)'';
+    getNixtowConfig = key: ''$(if [ -e /etc/nixtow/config ]; then val=$(awk -F= '$1 == "${key}" {print $2}' /etc/nixtow/config); if [ -e $val ]; then echo $val; else echo "${self}/dots/${key}/config.toml"; fi else echo "${self}/dots/${key}/config.toml"; fi)'';
   };
 }
