@@ -1,4 +1,4 @@
-{self, system, ...}: {
+{self, ...}: {
   flake.nixosModules.niri = {
     pkgs,
     lib,
@@ -7,7 +7,7 @@
     imports = [self.nixosModules.noctalia];
     programs.niri.enable = true;
     # programs.niri.useNautilus = true;
-    programs.niri.package = self.packages.${system}.niri;
+    programs.niri.package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri;
     services.dbus.enable = true;
     xdg.portal = {
       enable = true;
@@ -18,6 +18,7 @@
         "org.freedesktop.impl.portal.FileChooser" = "gtk";
       };
     };
+    # services.logind.settings.Login.HandlePowerKey = "ignore";
     services.pulseaudio.enable = lib.mkDefault true;
     environment.systemPackages = with pkgs; [
       xwayland-satellite

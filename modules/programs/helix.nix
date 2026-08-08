@@ -1,7 +1,7 @@
-{self, system, ...}: {
-  flake.nixosModules.helix = {
+{self, ...}: {
+  flake.nixosModules.helix = { pkgs, ... }: {
     environment = {
-      systemPackages = [self.packages.${system}.helix];
+      systemPackages = [self.packages.${pkgs.stdenv.hostPlatform.system}.helix];
       sessionVariables = {
         EDITOR = "hx";
       };
