@@ -1,31 +1,34 @@
-{self, ...}: {
+{self, system, ...}: {
   flake.nixosModules.helix = {
     environment = {
-      systemPackages = [ self.packages.aarch64-linux.helix ];
+      systemPackages = [self.packages.${system}.helix];
       sessionVariables = {
         EDITOR = "hx";
       };
     };
   };
-  
-  systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
-  perSystem = {
-    pkgs,
-    self',
-    ...
-  }: {
-    packages.helix =
-      pkgs.symlinkJoin {
-        name = "hx";
-        paths = [
-          pkgs.helix
-        ];
-        buildInputs = [
-           pkgs.makeWrapper
-        ];
-        postBuild = ''
-          wrapProgram $out/bin/hx --add-flags "-c" --add-flags "${self.lib.sdslinkFromNixtow "helix/config.toml"}";
-        '';
-      };
+
+  systems = [
+    "x86_64-linux"
+    "aarch64-linux"
+    "aarch64-darwin"
+  ];
+  perSystem = {pkgs, ...}: {
+    packages.helix = pkgs.symlinkJoin {
+      name = "hx";
+      paths = [
+        (pkgs.writeScriptBin "wrapper" ''
+          ${pkgs.helix}/bin/hx -c ${self.lib.getNixtowConfig "helix"} "$@"
+        '')
+        pkgs.helix
+
+        # Language Servers and Formaters
+        pkgs.nil
+        pkgs.nixfmt
+      ];
+      postBuild = ''
+        mv $out/bin/wrapper $out/bin/hx
+      '';
+    };
   };
 }

@@ -1,8 +1,7 @@
-theme = "catppuccin_mocha"
+theme = "rose_pine"
 
-[editor]
-line-number = "relative"
-mouse = false
+# [editor]
+# line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,3 +10,10 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.soft-wrap]
+enable = true
+
+# [[language]]
+# name = "nix"
+# formatter = { command = "alejandra" }

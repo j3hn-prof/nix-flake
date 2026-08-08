@@ -16,6 +16,8 @@
     # Application specific flakes
     # Ghostty upstream (FIX: vertical flickering bars)
     ghostty.url = "github:ghostty-org/ghostty";
+    # Noctalia
+    noctalia.url = "github:noctalia-dev/noctalia";
   };
 
   outputs = inputs @ {...}: let

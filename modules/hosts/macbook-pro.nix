@@ -6,9 +6,10 @@
   flake.nixosConfigurations.macbook-pro = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.macbook-pro-config
+      self.nixosModules.cli-utils
+      self.nixosModules.docker
       self.nixosModules.niri
       self.nixosModules.helix
-
       self.nixosModules.nixtow
     ];
   };
@@ -28,15 +29,19 @@
       ];
     };
 
+    nixtow.configDir = "/home/j3hn/.config/nix/dots";
+
     hardware.asahi.enable = true;
     hardware.asahi.peripheralFirmwareDirectory = /boot/vendorfw;
-
-    nixtow.configDir = "/home/j3hn/.config/nix/dots";
 
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.kernelParams = ["quiet" "splash" "loglevel=3"];
+    boot.kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=3"
+    ];
 
     networking.hostName = "macbook-pro"; # Define your hostname.
 
@@ -49,18 +54,16 @@
     };
 
     environment.systemPackages = [
-      pkgs.yazi
-      pkgs.git
-      pkgs.tree
-      pkgs.btop
-      pkgs.wget
-      pkgs.fastfetch
       pkgs.librewolf
       inputs.ghostty.packages.aarch64-linux.default
+      pkgs.pokemmo-installer
     ];
 
     # Enable Nix Flakes
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
     # and migrated your data accordingly.
